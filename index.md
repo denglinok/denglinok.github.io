@@ -8,7 +8,7 @@
 # 个人信息
 
  - 邓麟/男/1983 
- - 本科/成都信息工程学院软件工程 
+ - 本科/成都信息工程学院/软件工程 
  - 工作年限：13年
  - 微博：[@邓麟](http://weibo.com/teddeng) 
  - Github：https://github.com/denglinok
