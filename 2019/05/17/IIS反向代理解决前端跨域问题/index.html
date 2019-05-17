@@ -96,18 +96,28 @@
 
 
 
-  <meta name="description" content="下载镜像官网: https://www.centos.org 安装前配置 BIOS打开CPU虚拟化支持 （只有开启后，VirtualBox才能安装64位的CentOS） VirtualBox新建虚拟OS 设置-系统-主板，指点设备选择usb触控板（虚拟系统安装完成后修改回来） 设置-常规-高级，共享粘贴板/拖放选择双方 设置-系统，能勾选都勾选  设置-网络，连接方式选择桥接网卡 设置-存储，VD">
-<meta name="keywords" content="Linux,VituralBox">
+  <meta name="description" content="前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。 然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS+VirtualBox安装">
-<meta property="og:url" content="https://www.dengl.cn/2019/05/10/CentOS-VirtualBox安装/index.html">
+<meta property="og:title" content="IIS反向代理解决前端跨域问题">
+<meta property="og:url" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/index.html">
 <meta property="og:site_name" content="邓麟的个人网站">
-<meta property="og:description" content="下载镜像官网: https://www.centos.org 安装前配置 BIOS打开CPU虚拟化支持 （只有开启后，VirtualBox才能安装64位的CentOS） VirtualBox新建虚拟OS 设置-系统-主板，指点设备选择usb触控板（虚拟系统安装完成后修改回来） 设置-常规-高级，共享粘贴板/拖放选择双方 设置-系统，能勾选都勾选  设置-网络，连接方式选择桥接网卡 设置-存储，VD">
+<meta property="og:description" content="前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。 然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-10T06:34:25.632Z">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront1.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront2.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront3.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront4.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront5.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront6.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront7.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront8.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront9.jpg">
+<meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront6.jpg">
+<meta property="og:updated_time" content="2019-05-17T09:22:43.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS+VirtualBox安装">
-<meta name="twitter:description" content="下载镜像官网: https://www.centos.org 安装前配置 BIOS打开CPU虚拟化支持 （只有开启后，VirtualBox才能安装64位的CentOS） VirtualBox新建虚拟OS 设置-系统-主板，指点设备选择usb触控板（虚拟系统安装完成后修改回来） 设置-常规-高级，共享粘贴板/拖放选择双方 设置-系统，能勾选都勾选  设置-网络，连接方式选择桥接网卡 设置-存储，VD">
+<meta name="twitter:title" content="IIS反向代理解决前端跨域问题">
+<meta name="twitter:description" content="前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。 然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前">
+<meta name="twitter:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront1.jpg">
 
 
 
@@ -115,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="https://www.dengl.cn/2019/05/10/CentOS-VirtualBox安装/">
+  <link rel="canonical" href="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/">
 
 
 
@@ -125,7 +135,7 @@
   };
 </script>
 
-  <title>CentOS+VirtualBox安装 | 邓麟的个人网站</title>
+  <title>IIS反向代理解决前端跨域问题 | 邓麟的个人网站</title>
   
 
 
@@ -341,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.dengl.cn/2019/05/10/CentOS-VirtualBox安装/">
+    <link itemprop="mainEntityOfPage" href="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Deng Lin">
@@ -358,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS+VirtualBox安装
+          <h1 class="post-title" itemprop="name headline">IIS反向代理解决前端跨域问题
 
               
             
@@ -384,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-05-10 13:57:08 / 修改时间：14:34:25" itemprop="dateCreated datePublished" datetime="2019-05-10T13:57:08+08:00">2019-05-10</time>
+              <time title="创建时间：2019-05-17 16:37:05 / 修改时间：17:22:43" itemprop="dateCreated datePublished" datetime="2019-05-17T16:37:05+08:00">2019-05-17</time>
             
 
             
@@ -394,24 +404,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -441,53 +433,22 @@
       
 
       
-        <h1 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h1><p>官网: <a href="https://www.centos.org" target="_blank" rel="noopener">https://www.centos.org</a></p>
-<h1 id="安装前配置"><a href="#安装前配置" class="headerlink" title="安装前配置"></a>安装前配置</h1><ol>
-<li>BIOS打开CPU虚拟化支持 （只有开启后，VirtualBox才能安装64位的CentOS）</li>
-<li>VirtualBox新建虚拟OS<ol>
-<li>设置-系统-主板，指点设备选择usb触控板（虚拟系统安装完成后修改回来）</li>
-<li>设置-常规-高级，共享粘贴板/拖放选择双方</li>
-<li>设置-系统，能勾选都勾选 </li>
-<li>设置-网络，连接方式选择桥接网卡</li>
-<li>设置-存储，VDI，勾选固态驱动器<h1 id="安装选项"><a href="#安装选项" class="headerlink" title="安装选项"></a>安装选项</h1></li>
-</ol>
-</li>
-</ol>
-<ul>
-<li style="list-style: none"><input type="checkbox"> Minimal </li>
-<li style="list-style: none"><input type="checkbox"> Everything</li>
-<li style="list-style: none"><input type="checkbox"> KDE</li>
-<li style="list-style: none"><input type="checkbox" checked> Gnome<h1 id="切换源到阿里云"><a href="#切换源到阿里云" class="headerlink" title="切换源到阿里云"></a>切换源到阿里云</h1></li>
-<li>备份</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
-<ul>
-<li>下载阿里云的CentOS-Base.repo</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
-<ul>
-<li>清理缓存</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum clean all</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生成新缓存</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
-<ul>
-<li>更新</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y update</span><br></pre></td></tr></table></figure>
-<h1 id="安装增强包"><a href="#安装增强包" class="headerlink" title="安装增强包"></a>安装增强包</h1><ul>
-<li>安装组件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-devel gcc</span><br></pre></td></tr></table></figure>
-<ul>
-<li>VirutalBox，设备-安装增强功能</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./VBoxLinuxAdditions.run Or 双击运行</span><br></pre></td></tr></table></figure>
-<h1 id="安装Git-amp-VSCode"><a href="#安装Git-amp-VSCode" class="headerlink" title="安装Git&amp;VSCode"></a>安装Git&amp;VSCode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br><span class="line">sudo sh -c &apos;echo -e &quot;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&quot; &gt; /etc/yum.repos.d/vscode.repo&apos;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum check-update</span><br><span class="line">sudo yum install code</span><br></pre></td></tr></table></figure>
+        <p>前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。</p>
+<p>然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前端的代理设置无法直接访问到后端WebApi服务上。因此，需要在web服务器上配置反向代理，才能解决前端请求后端WebApi服务的问题。也就是反向代理解决前端跨域问题。</p>
+<h1 id="1-环境要求"><a href="#1-环境要求" class="headerlink" title="1 环境要求"></a>1 环境要求</h1><p>iis需要满足iis7或者更高的版本</p>
+<h1 id="2-下载安装ARR"><a href="#2-下载安装ARR" class="headerlink" title="2 下载安装ARR"></a>2 下载安装ARR</h1><p>ARR全称为 Application  Request Routing）<br><a href="http://www.iis.net/downloads/microsoft/application-request-routing" target="_blank" rel="noopener">http://www.iis.net/downloads/microsoft/application-request-routing</a></p>
+<p>安装好后，在iis里能看到以下图</p>
+<p><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront1.jpg" alt="1"> </p>
+<h1 id="3-配置反向代理"><a href="#3-配置反向代理" class="headerlink" title="3 配置反向代理"></a>3 配置反向代理</h1><p>点击上图ARR，启用反向代理配置<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront2.jpg" alt="2"><br>点击Server Proxy Settings</p>
+<p><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront3.jpg" alt="3"><br>勾选Enable proxy</p>
+<h2 id="3-1-网站配置反向代理"><a href="#3-1-网站配置反向代理" class="headerlink" title="3.1 网站配置反向代理"></a>3.1 网站配置反向代理</h2><p>在需要反向代理的Web网站上，点击该网站，能看到下图中的信息<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront4.jpg" alt="4"><br>双击URL重写，点击右侧的新建规则，再选择空白规则，确定</p>
+<h2 id="3-2-配置规则"><a href="#3-2-配置规则" class="headerlink" title="3.2 配置规则"></a>3.2 配置规则</h2><h2 id="3-2-1-配置匹配规则"><a href="#3-2-1-配置匹配规则" class="headerlink" title="3.2.1 配置匹配规则"></a>3.2.1 配置匹配规则</h2><p><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront5.jpg" alt="5"><br>根据反向代理的要求，可以部分或者全部进行反向代理配置。如上图所示，^api/(.*)，表示只是匹配api/开头的网址进行反向代理。</p>
+<p>如果需要全部匹配，则^/(.*)。</p>
+<p>匹配规则下可以使用测试模式，如下图所示<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront6.jpg" alt="6"><br>如果输入的是api/home的网址，则匹配成功，同时请注意捕获组内的向后引用{R:0}和{R:1}，在后续配置中会用到。</p>
+<p>在测试模式中，如果匹配失败，如下图所示<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront7.jpg" alt="7"> </p>
+<h2 id="3-2-2-配置条件规则"><a href="#3-2-2-配置条件规则" class="headerlink" title="3.2.2 配置条件规则"></a>3.2.2 配置条件规则</h2><p>接下来配置条件规则，点击添加<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront8.jpg" alt="8"><br>输入{HTTP_HOST}， 模式内输入你网址的信息，如果是域名写域名，如果是IP写IP，根据网站的配置来定。</p>
+<h2 id="3-2-3-配置重写URL"><a href="#3-2-3-配置重写URL" class="headerlink" title="3.2.3 配置重写URL"></a>3.2.3 配置重写URL</h2><p>之前通过配置匹配规则和条件规则，确定了在什么样的网址来源基础上来出发反向代理的条件，重写URL则是反向代理到目的网址上。通常目的网址和源网址是跨域的。<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront9.jpg" alt="9"><br>配置需要注意，必须以http://开头，否则的话会反向代理失败。其次，{R:0}和{R:1}，该选择什么参数，由反向代理的需要来决定。<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront6.jpg" alt="6"><br>如果 <a href="http://www.source.com/api/home" target="_blank" rel="noopener">www.source.com/api/home</a> 需要到 <a href="http://www.dest.com/api/home，则需要{R:0}" target="_blank" rel="noopener">www.dest.com/api/home，则需要{R:0}</a><br>如果 <a href="http://www.source.com/api/home" target="_blank" rel="noopener">www.source.com/api/home</a> 需要到 <a href="http://www.dest.com/home，则需要{R:1}" target="_blank" rel="noopener">www.dest.com/home，则需要{R:1}</a></p>
+<h2 id="3-2-4-保存配置"><a href="#3-2-4-保存配置" class="headerlink" title="3.2.4 保存配置"></a>3.2.4 保存配置</h2><p>点击应用该规则，回到IIS的网站选项上，点击重启服务即可重新使用。</p>
 
       
     </div>
@@ -509,14 +470,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/VituralBox/" rel="tag"># VituralBox</a>
-          
-        </div>
-      
 
       
       
@@ -526,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/10/Git的基础/" rel="next" title="Git的基础">
-                <i class="fa fa-chevron-left"></i> Git的基础
+              <a href="/2019/05/10/CentOS常见操作指令/" rel="next" title="CentOS常见操作指令">
+                <i class="fa fa-chevron-left"></i> CentOS常见操作指令
               </a>
             
           </div>
@@ -535,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/10/MySQL安装和步骤/" rel="prev" title="MySQL安装和步骤">
-                MySQL安装和步骤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -693,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载镜像"><span class="nav-number">1.</span> <span class="nav-text">下载镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装前配置"><span class="nav-number">2.</span> <span class="nav-text">安装前配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装选项"><span class="nav-number">3.</span> <span class="nav-text">安装选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#切换源到阿里云"><span class="nav-number">4.</span> <span class="nav-text">切换源到阿里云</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装增强包"><span class="nav-number">5.</span> <span class="nav-text">安装增强包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Git-amp-VSCode"><span class="nav-number">6.</span> <span class="nav-text">安装Git&amp;VSCode</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-环境要求"><span class="nav-number">1.</span> <span class="nav-text">1 环境要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-下载安装ARR"><span class="nav-number">2.</span> <span class="nav-text">2 下载安装ARR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-配置反向代理"><span class="nav-number">3.</span> <span class="nav-text">3 配置反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-网站配置反向代理"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 网站配置反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-配置规则"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 配置规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-1-配置匹配规则"><span class="nav-number">3.3.</span> <span class="nav-text">3.2.1 配置匹配规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-2-配置条件规则"><span class="nav-number">3.4.</span> <span class="nav-text">3.2.2 配置条件规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-3-配置重写URL"><span class="nav-number">3.5.</span> <span class="nav-text">3.2.3 配置重写URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-4-保存配置"><span class="nav-number">3.6.</span> <span class="nav-text">3.2.4 保存配置</span></a></li></ol></li></ol></div>
             
 
           </div>
