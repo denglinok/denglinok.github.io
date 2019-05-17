@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront8.jpg">
 <meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront9.jpg">
 <meta property="og:image" content="https://www.dengl.cn/2019/05/17/IIS反向代理解决前端跨域问题/iisfront6.jpg">
-<meta property="og:updated_time" content="2019-05-17T09:22:43.625Z">
+<meta property="og:updated_time" content="2019-05-17T09:26:51.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IIS反向代理解决前端跨域问题">
 <meta name="twitter:description" content="前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。 然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前">
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-05-17 16:37:05 / 修改时间：17:22:43" itemprop="dateCreated datePublished" datetime="2019-05-17T16:37:05+08:00">2019-05-17</time>
+              <time title="创建时间：2019-05-17 16:37:05 / 修改时间：17:26:51" itemprop="dateCreated datePublished" datetime="2019-05-17T16:37:05+08:00">2019-05-17</time>
             
 
             
@@ -436,7 +436,7 @@
         <p>前后端分离已经是主流的开发模式，后端提供WebApi服务，前端实现路由和页面逻辑和管理。通常前端采用Nodejs和React等工具技术栈。比如使用VSCode开发时，输入npm start或者npm start:no-mock，可以通过访问配置的代理地址，获取后端的WebApi服务。</p>
 <p>然而当从开发环境中打包生成静态文件(npm build)，发布到ngix或者iis等托管web服务器上时，会发现前端的代理设置无法直接访问到后端WebApi服务上。因此，需要在web服务器上配置反向代理，才能解决前端请求后端WebApi服务的问题。也就是反向代理解决前端跨域问题。</p>
 <h1 id="1-环境要求"><a href="#1-环境要求" class="headerlink" title="1 环境要求"></a>1 环境要求</h1><p>iis需要满足iis7或者更高的版本</p>
-<h1 id="2-下载安装ARR"><a href="#2-下载安装ARR" class="headerlink" title="2 下载安装ARR"></a>2 下载安装ARR</h1><p>ARR全称为 Application  Request Routing）<br><a href="http://www.iis.net/downloads/microsoft/application-request-routing" target="_blank" rel="noopener">http://www.iis.net/downloads/microsoft/application-request-routing</a></p>
+<h1 id="2-下载安装ARR"><a href="#2-下载安装ARR" class="headerlink" title="2 下载安装ARR"></a>2 下载安装ARR</h1><p>ARR全称为 Application  Request Routing<br><a href="http://www.iis.net/downloads/microsoft/application-request-routing" target="_blank" rel="noopener">http://www.iis.net/downloads/microsoft/application-request-routing</a></p>
 <p>安装好后，在iis里能看到以下图</p>
 <p><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront1.jpg" alt="1"> </p>
 <h1 id="3-配置反向代理"><a href="#3-配置反向代理" class="headerlink" title="3 配置反向代理"></a>3 配置反向代理</h1><p>点击上图ARR，启用反向代理配置<br><img src="/2019/05/17/IIS反向代理解决前端跨域问题/iisfront2.jpg" alt="2"><br>点击Server Proxy Settings</p>
